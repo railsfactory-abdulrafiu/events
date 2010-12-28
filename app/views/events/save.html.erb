@@ -1,0 +1,7 @@
+<%-form_for :data, :url=>{:action=>"view_events"} do |f|%>
+<%=hidden_field_tag 'id',@group.id%>
+<h1><font color="green">Comment Successfully Added</font>
+<%=f.submit :"ok"%></h1>
+<%end%>
+<%= link_to "click here=>show group",:a=> 0, :controller=>"events", :action=>"show_group"%>
+<%= link_to "Log Out",  logout_path%>

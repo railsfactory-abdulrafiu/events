@@ -1,0 +1,16 @@
+<table>
+<tr>
+<th><h2>Group Name...</h2></th>
+<th></th>
+</tr>
+<% @groups.each do |group| %>
+<tr>
+<td><%= group.id%> </td> 
+<td><%= group.name%> </td> 
+
+<td><%= link_to "Click Here to View/Join/Post Event", :id => group.id, :controller => "events", :action => "view_events" %></td>
+</tr>
+<%end%>
+</table>
+<%= link_to "Add Group",  add_group_path%>
+<%= link_to "Log Out",  logout_path%>

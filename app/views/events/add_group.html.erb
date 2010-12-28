@@ -1,0 +1,11 @@
+<%-form_for :data, :url=>{:action=>"show_group"} do |f| %>
+<%=hidden_field_tag'a',1%>
+<%=f.label :"Name of the Group" %><br>
+<%=f.text_field :name%><br>
+<%=f.label :"Group Description"%><br>
+<%=f.text_area :description%><br>
+<%=f.submit :"Add"%>
+<%-end%><table>
+<tr><td><%= link_to "Show Groups",show_group_path %></td></tr></table>
+<%= link_to "click here=>show group",:a=> 0, :controller=>"events", :action=>"show_group"%>
+<%= link_to "Log Out",  logout_path%>

@@ -1,0 +1,23 @@
+<center><h1><%=@group.name%></h1><br>
+<h2><%=@group.description%></h2><br><br><br>
+<table>
+<tr><th>Event</th><th>Description</th><th>date</th><th>Orgnizer</th></tr>
+<%@events.each do |i|%>
+<tr>
+<td><%=i.title%></font></td>
+<td><%=i.description%></td>
+<td><%=i.date%></td>
+<td><%=i.organizer%></td>
+</tr>
+<%end%><table align="bottom"><tr><td>
+<table>
+<tr><th>User</th></tr>
+<%@users.each do |i|%>
+<tr>
+<td><%=i.name%></font></td>
+</tr>
+<%end%><table align="bottom"><tr><td>
+</td></tr></table>
+<%= link_to "click here=>Join In This Group", :id=>@group.id, :controller => "events", :action => "join_group"%></td></tr></table>
+<%= link_to "click here=>show group",:a=> 0, :controller=>"events", :action=>"show_group"%>
+<%= link_to "Log Out",  logout_path%>
